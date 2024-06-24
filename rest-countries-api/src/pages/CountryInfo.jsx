@@ -32,7 +32,7 @@ function CountryInfo() {
            <div className=" flex lg:flex-row md:flex-row flex-col gap-5  ">
            <div className="  pt-5 pb-5">
                 <div className="flex flex-row space-x-2"><h1 className="  font-medium">Native Name:</h1> <p className=" font-normal  break-all">  {Object.values(searchedCountry.name.nativeName)[0].official}</p></div>
-                <div className="flex flex-row space-x-2"><h1 className="  font-medium">Population:</h1> <p className=" font-normal">{searchedCountry.population}</p></div>
+                <div className="flex flex-row space-x-2"><h1 className="  font-medium">Population:</h1> <p className=" font-normal">{searchedCountry.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p></div>
                 <div className="flex flex-row space-x-2"><h1 className="  font-medium">Region:</h1> <p className=" font-normal">{searchedCountry.region}</p></div>
                 <div className="flex flex-row space-x-2"><h1 className="  font-medium">Sub Region:</h1> <p className=" font-normal">{searchedCountry.subregion}</p></div>
                 <div className="flex flex-row space-x-2"><h1 className="  font-medium">Capital:</h1> <p className=" font-normal">{searchedCountry.capital}</p></div>

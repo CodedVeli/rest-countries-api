@@ -8,7 +8,7 @@ function CountryCard( {name, population, region, capital, flags}) {
             <div className=" pt-5 pb-5" >
             <h1 className=" font-bold text-xl ">{name.official}</h1>
             <div >
-                <div className="flex flex-row space-x-2"><h1 className="  font-medium">Population:</h1> <p className=" font-normal">{population}</p></div>
+                <div className="flex flex-row space-x-2"><h1 className="  font-medium">Population:</h1> <p className=" font-normal">{population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p></div>
                 <div className="flex flex-row space-x-2"><h1 className="  font-medium">Region:</h1> <p className=" font-normal">{region}</p></div>
                 <div className="flex flex-row space-x-2"><h1 className="  font-medium">Capital:</h1><p className=" font-normal">{capital ? capital[0] : 'N/A'}</p></div>
             </div>
