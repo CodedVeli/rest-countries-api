@@ -1,24 +1,28 @@
-import { Select, Space } from 'antd';
+
 
 function Filters({setRegion}) {
+
+
   return (
-    <Space size={20}>
-      <Select
-        style={{ width: 200 }}
-        placeholder="Filter by Region"
-        onChange={(value) => setRegion(value)}
-      >
-        <Select.Option value="Africa">Africa</Select.Option>
-        <Select.Option value="Americas">Americas</Select.Option>
-        <Select.Option value="Asia">Asia</Select.Option>
-        <Select.Option value="Europe">Europe</Select.Option>
-        <Select.Option value="Oceania">Oceania</Select.Option>
-        <Select.Option value="North America">North America</Select.Option>
-        <Select.Option value="South America">South America</Select.Option>
-        
-      </Select>
-    </Space>    
+    <div className="px-4 py-4 w-1/2 sm:w-auto flex justify-center items-center  ">
+<select
+  
+  className="dark:bg-Dark-Blue-Elements  w-full bg-white dark:text-white p-2 shadow font-nunito-sans font-medium rounded-md"
+  onChange={(e) => setRegion(e.target.value)}
+>
+  <option value="">Select Continent</option>
+  <option value="Africa">Africa</option>
+  <option value="Asia">Asia</option>
+  <option value="North America">North America</option>
+  <option value="South America">South America</option>
+  <option value="Oceania">Oceania</option>
+  <option value="Europe">Europe</option>
+  <option value="Asia">Asia</option>
+</select>
+</div>
+
   );
 }
+
 
 export default Filters;

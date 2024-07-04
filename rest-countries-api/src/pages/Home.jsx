@@ -8,7 +8,7 @@ function Home() {
 
   
   return (
-    <section className=" flex flex-col  bg-Light-Gray h-screen  space-y-10 pt-20  ">
+    <section className=" flex flex-col  bg-Light-Gray min-h-screen  space-y-10 pt-20  dark:bg-Very-Bark-Blue-bg ">
         <div className=" flex lg:justify-between md:justify-between flex-wrap mx-10 pt-5 lg:space-y-0 md:space-y-0 space-y-10 ">
         <Search setSearchTerm={setSearchTerm}/>
             <Filters setRegion={setRegion}/>

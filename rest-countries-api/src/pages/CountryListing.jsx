@@ -6,8 +6,8 @@ import { useGetCountryByNameQuery } from '../rtk/apis/CountryApi'
 import { useGetCountryByRegionQuery } from '../rtk/apis/CountryApi'
 function CountryListing({searchTerm,region}) {
   const { data = [], error, isLoading } = useGetAllCountriesQuery()
-  const { data: countryData = [] } = useGetCountryByNameQuery(searchTerm)  
-  const { data: dataRegion = []} = useGetCountryByRegionQuery(region);
+  const { data: countryData = [], isLoadingSearch, errorSearch } = useGetCountryByNameQuery(searchTerm)  
+  const { data: dataRegion = [], isLoadingRegion, errorRegion} = useGetCountryByRegionQuery(region);
 
   let countryList;
   if (searchTerm) {
@@ -20,10 +20,10 @@ function CountryListing({searchTerm,region}) {
       <CountryCard key={country.name.common} {...country} />
     ))    
   }
-  else if (isLoading) {
+  else if (isLoading || isLoadingSearch || isLoadingRegion) {
     countryList = <Skeleton  className=' h-[350px] w-full max-w-[15rem]' count={8}/>
   }
-  else if (error) {
+  else if (error || errorSearch || errorRegion) {
     countryList = <div>Error: {error.message}</div>
   }
    else {
@@ -32,7 +32,7 @@ function CountryListing({searchTerm,region}) {
   ))    
 }
   return (
-    <div className=" flex flex-wrap items-center justify-center  mx-10 gap-5" >
+    <div className=" bg-White  grid grid-cols-1 md:grid-cols-4 mx-auto lg:gap-10 gap-5 dark:bg-Very-Bark-Blue-bg" >
         {countryList}            
             
         </div>
