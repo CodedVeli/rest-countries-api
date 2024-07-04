@@ -22,7 +22,7 @@ function CountryListing({searchTerm,region}) {
   if (filteredCountries) {
     countryList = filteredCountries.length > 0 ? 
         filteredCountries.map((country) => <CountryCard key={country.name.common} {...country} />) 
-        : (<p>Not found</p>);
+        :(isLoading ||  isLoadingRegion) ? <Skeleton  className=' h-[350px] w-full max-w-[15rem]' count={8}/> : <div className="text-center text-2xl">No countries found</div>
 }
   else if (region) {
     countryList = dataRegion.map((country) => (
