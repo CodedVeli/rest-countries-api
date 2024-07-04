@@ -13,8 +13,8 @@ export default {
         'Dark-Blue':'hsl(200, 15%, 8%)'
       },
       fontFamily: {
-        'Nunito': ['Nunito', '"Nunito Sans", sans-serif;']
-       }
+        "nunito-sans": ["Nunito Sans", "sans-serif"],
+      },
     },
   },
   plugins: [],

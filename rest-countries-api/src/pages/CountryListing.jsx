@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
 import CountryCard from '../components/CountryCard'
 import { useGetAllCountriesQuery } from '../rtk/apis/CountryApi'
 import Skeleton from '../components/Skeleton'
